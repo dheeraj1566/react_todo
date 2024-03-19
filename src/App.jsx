@@ -4,30 +4,48 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import CheckIcon from '@mui/icons-material/Check';
 
 function App() {
   const [value, setValue] = useState("")
   const [tasks, setTasks] = useState([])
 
+
   function details() {
     setTasks([...tasks, value])
+    setValue("")
   }
+  function detelechange(index) {
+    setTasks(tasks.filter((task, ind) => {
+      return ind !== index
+    }))
+  }
+  function editchange(values){
+    setValue(tasks.filter((vals,ind)=>{
+      return vals===values
+    }))
+  }
+
   return (
     <>
       <h1>TO-DO LIST</h1>
-      <input type="text" value={value} onChange= {(e) => { setValue(e.target.value)}} />
+      <input type="text" value={value} onChange={(e) => { setValue(e.target.value) }} />
       <button onClick={details}>Add Task</button>
       <ul>
         {tasks.map((val, ind) => {
           return <>
-            <li>{ind}{val}<DeleteIcon /><EditIcon/></li>
-            </>
+            <li>{val}
+              <DeleteIcon onClick={(e) => detelechange(ind)} />
+              <EditIcon onClick={(e) => editchange(val)} />
+              <CheckIcon/>
+            </li>
+          </>
         })}
       </ul>
+
 
     </>
   )
 }
-
 
 export default App

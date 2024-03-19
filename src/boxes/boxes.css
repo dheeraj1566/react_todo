@@ -1,0 +1,46 @@
+.content{
+    display: none;
+}
+.content.shown{
+    display: block;
+}
+.boxes{
+    display: flex;
+}
+.Box{
+    border:solid 2px #000;
+    border-radius: 10px;
+    margin: 1%;
+    box-shadow:5px 5px 5px #000;
+}
+.Box .dark{
+    border:solid 2px #fff;
+    border-radius: 10px;
+    margin: 1%;
+    box-shadow:5px 5px 5px #fff;
+}
+main{
+    padding-bottom: 3rem;
+}
+main .dark nav{
+    box-shadow: 2px 2px 4px 3px  #343131 ;
+}
+
+main .dark .Box{
+    box-shadow: 2px 2px 4px 3px  #343131 ;
+}
+button.rotate{
+    transform: rotate(180deg);
+    transition: all 4s ease;
+}
+button .light{
+ color: #fff;
+ background-color: #000;
+}
+button .dark{
+    background-color: #000;
+}
+main .dark{
+    background-color: #000;
+    color: #fff;
+}
