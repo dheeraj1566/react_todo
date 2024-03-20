@@ -4,17 +4,22 @@ import "./text.css";
 function Text() {
     const [isBold, setIsBold] = useState(false);
     const [input, setInputText] = useState("");
+    const [FontStyle, setFontStyle] = useState(false);
 
-    const handleChangeFont = () => {
+    const ChangeFont = () => {
         setIsBold(!isBold);
     };
-
+     const changestyle = () => {
+        setFontStyle(!FontStyle );
+    };
     return (
         <div>
             <div className='parent'>
-                <input type="text" className={isBold ? "bold" : "normal"}  value={input} 
- onChange={(e) => setInputText(e.target.value)} />
-                <button onClick={handleChangeFont}>{isBold ? "Normal" : "Bold"} </button>
+                <input type="text" className={isBold ? "bold" : "normal"} id={FontStyle ? "italic" : "normal"}
+                  value={input} 
+                  onChange={(e) => setInputText(e.target.value)}/>
+                <button onClick={ChangeFont} id='1' className={isBold ? "normal" : "Bold"}>{isBold ? "normal" : "Bold"} </button>
+                <button onClick={changestyle}  >{FontStyle ? "normal" : "italic"}</button>
             </div>
         </div>
     );

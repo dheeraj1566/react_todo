@@ -5,3 +5,9 @@
 .normal {
     font-weight: normal;
 }
+#italic {
+    font-style: italic;
+}
+.normal{
+    font-style: normal;
+}
