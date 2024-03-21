@@ -2,12 +2,24 @@
     font-weight: bold;
 }
 
-.normal {
+.Normal {
     font-weight: normal;
 }
-#italic {
+.Italic {
     font-style: italic;
 }
-.normal{
-    font-style: normal;
+.Uppercase
+{
+    text-transform: uppercase;
 }
+.Normal
+{
+    text-transform: none;
+}
+.Lowercase
+{
+    text-transform: lowercase;
+}
+/* .Normal{
+    text-transform: none;
+} */
